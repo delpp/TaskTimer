@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="task.timer.view.MainEmployeerController">
+   <children>
+      <AnchorPane fx:id="anchorPane1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle fx:id="rectangle1" arcHeight="5.0" arcWidth="5.0" fill="#21ff302c" height="90.0" stroke="BLACK" strokeType="INSIDE" width="700.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="55.0" />
+            <Rectangle fx:id="rectangle2" arcHeight="5.0" arcWidth="5.0" fill="#37ff2100" height="789.0" stroke="BLACK" strokeType="INSIDE" width="710.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPane2" prefHeight="777.0" prefWidth="699.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <VBox prefHeight="142.0" prefWidth="690.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="710.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="522.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Zalogowano:" />
+                              <Label fx:id="loggedUserName" text="NAZWA UŻYTKOWNIKA">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <DatePicker fx:id="date" editable="false" visible="false" />
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="106.0" HBox.hgrow="NEVER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#changePassword" text="Zmień hasło" HBox.hgrow="NEVER" />
+                           </children>
+                        </HBox>
+                        <Button mnemonicParsing="false" onMouseClicked="#logout" HBox.hgrow="NEVER">
+                           <graphic>
+                              <ImageView blendMode="SRC_ATOP" fitHeight="68.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../helper/exit1600.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="logout" />
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hbox" alignment="CENTER_LEFT" prefHeight="123.0" prefWidth="690.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox prefHeight="86.0" prefWidth="416.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Label maxHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" text="Wybór projektu" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ChoiceBox fx:id="chooseProject" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="329.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Label maxWidth="-Infinity" minWidth="-Infinity" prefHeight="17.0" text="Opis:" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="descriptionName" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="368.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </VBox>
+                        <Button fx:id="startStopTime" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#timing" prefHeight="73.0" prefWidth="73.0" text="START" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="197.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="151.0" text="hours" textAlignment="CENTER" />
+                                          <Label fx:id="measuredTimeHoursLabel" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="151.0" text="min." textAlignment="CENTER" />
+                                          <Label fx:id="measuredTimeMinutesLabel" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="151.0" text="sek." textAlignment="CENTER" />
+                                          <Label fx:id="measuredTimeSecondsLabel" text="Label" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="dataLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="179.0" text="Data">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <TableView fx:id="recordTable" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="637.0" prefWidth="687.0" snapToPixel="false" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="140.0">
+              <columns>
+                  <TableColumn fx:id="dateColumn" maxWidth="88.0" minWidth="-Infinity" prefWidth="88.0" resizable="false" text="Data" />
+                <TableColumn fx:id="projectNameColumn" maxWidth="1.7976931348623157E308" prefWidth="215.0" text="Projekt" />
+                  <TableColumn fx:id="descriptionColumn" maxWidth="1.7976931348623157E308" onEditCommit="#onEditDescription" prefWidth="224.0" text="Opis" />
+                  <TableColumn maxWidth="160.0" minWidth="-Infinity" prefWidth="160.0" resizable="false" text="Czas pracy">
+                     <columns>
+                      <TableColumn fx:id="startTimeColumn" maxWidth="80.0" minWidth="-Infinity" onEditCommit="#onEditStartTime" resizable="false" text="Początek" />
+                        <TableColumn fx:id="stopTimeColumn" maxWidth="80.0" minWidth="-Infinity" onEditCommit="#onEditStopTime" resizable="false" text="Koniec" />
+                     </columns>
+                  </TableColumn>
+              </columns>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" onAction="#deleteRecord" text="usuń wpis" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
